@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Unicode|Win32">
+      <Configuration>Debug_Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Unicode|Win32">
+      <Configuration>Release_Unicode</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>飞禽走兽客户端</ProjectName>
+    <ProjectGuid>{F2D70F30-23FC-4973-A798-AED329359B33}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Unicode|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Unicode|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Unicode|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Unicode|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Unicode|Win32'">
+    <OutDir>$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_BANK_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>../../../../运行/debug/Ansi/AnimalBattle.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <PostBuildEvent>
+      <Command>mkdir ..\..\..\发布组件\客户端组件\Debug\Ansi\
+copy /y ..\..\..\..\运行\Debug\Ansi\$(TargetFileName) ..\..\..\发布组件\客户端组件\Debug\Ansi\$(TargetFileName)
+</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_BANK_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>../../../../运行/Release/Ansi/AnimalBattle.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <PostBuildEvent>
+      <Command>mkdir ..\..\..\发布组件\客户端组件\Release\Ansi
+copy /y ..\..\..\..\运行\Release\Ansi\$(TargetFileName) ..\..\..\发布组件\客户端组件\Release\Ansi\$(TargetFileName)
+</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Unicode|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_BANK_;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>../../../../运行/debug/Unicode/AnimalBattle.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <PostBuildEvent>
+      <Command>mkdir ..\..\..\发布组件\客户端组件\Debug\Unicode
+copy /y ..\..\..\..\运行\Debug\Unicode\$(TargetFileName) ..\..\..\发布组件\客户端组件\Debug\Unicode\$(TargetFileName)
+</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Unicode|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_BANK_;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>../../../../运行/Release/Unicode/AnimalBattle.exe</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <PostBuildEvent>
+      <Command>mkdir ..\..\..\发布组件\客户端组件\Release\Unicode\
+copy /y ..\..\..\..\运行\Release\Unicode\$(TargetFileName) ..\..\..\发布组件\客户端组件\Release\Unicode\$(TargetFileName)
+</Command>
+    </PostBuildEvent>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\游戏服务器\GameLogic.cpp" />
+    <ClCompile Include="CardControl.cpp" />
+    <ClCompile Include="DirectSound.cpp" />
+    <ClCompile Include="DlgGameRule.cpp" />
+    <ClCompile Include="GameClient.cpp" />
+    <ClCompile Include="GameClientEngine.cpp" />
+    <ClCompile Include="GameClientView.cpp" />
+    <ClCompile Include="GameFrameWndEx.cpp" />
+    <ClCompile Include="PngMyImage.cpp" />
+    <ClCompile Include="RecordGameList.cpp" />
+    <ClCompile Include="Stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_Unicode|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_Unicode|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\消息定义\CMD_ZodiacBattle.h" />
+    <ClInclude Include="..\游戏服务器\GameLogic.h" />
+    <ClInclude Include="CardControl.h" />
+    <ClInclude Include="ClientControl.h" />
+    <ClInclude Include="DirectSound.h" />
+    <ClInclude Include="DlgGameRule.h" />
+    <ClInclude Include="GameClient.h" />
+    <ClInclude Include="GameClientEngine.h" />
+    <ClInclude Include="GameClientView.h" />
+    <ClInclude Include="GameFrameWndEx.h" />
+    <ClInclude Include="PngMyImage.h" />
+    <ClInclude Include="RecordGameList.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="SelectDialog.h" />
+    <ClInclude Include="Stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Res\ALLJETTON_NUM.png" />
+    <Image Include="Res\ALLJETTON_NUM_B.png" />
+    <Image Include="Res\ANIMAL_LIGHT.png" />
+    <Image Include="Res\ANIMAL_LIST.png" />
+    <Image Include="Res\BACK_MESSAGE.bmp" />
+    <Image Include="Res\BANKNUM.png" />
+    <Image Include="Res\BANK_FRAME.png" />
+    <Image Include="Res\BT_ANIMAL_1.png" />
+    <Image Include="Res\BT_ANIMAL_10.png" />
+    <Image Include="Res\BT_ANIMAL_11.png" />
+    <Image Include="Res\BT_ANIMAL_2.png" />
+    <Image Include="Res\BT_ANIMAL_3.png" />
+    <Image Include="Res\BT_ANIMAL_4.png" />
+    <Image Include="Res\BT_ANIMAL_5.png" />
+    <Image Include="Res\BT_ANIMAL_6.png" />
+    <Image Include="Res\BT_ANIMAL_7.png" />
+    <Image Include="Res\BT_ANIMAL_8.png" />
+    <Image Include="Res\BT_ANIMAL_9.png" />
+    <Image Include="Res\BT_CLOSE.bmp" />
+    <Image Include="Res\BT_COMMIT_PLACE_JETTON.bmp" />
+    <Image Include="Res\BT_DLG_CLOSE.bmp" />
+    <Image Include="Res\BT_DRAW.bmp" />
+    <Image Include="Res\BT_FRESH.bmp" />
+    <Image Include="Res\BT_GETGOLD.bmp" />
+    <Image Include="Res\Bt_jetton_100.bmp" />
+    <Image Include="Res\Bt_jetton_1000.bmp" />
+    <Image Include="Res\Bt_jetton_10000.bmp" />
+    <Image Include="Res\Bt_jetton_100000.bmp" />
+    <Image Include="Res\BT_JETTON_1000000.bmp" />
+    <Image Include="Res\BT_JIA.bmp" />
+    <Image Include="Res\BT_MESSAGE.bmp" />
+    <Image Include="Res\BT_SAVEGOLD.bmp" />
+    <Image Include="Res\BT_SCORE_MOVE_L.bmp" />
+    <Image Include="Res\BT_SCORE_MOVE_R.bmp" />
+    <Image Include="Res\BT_STORAGE.bmp" />
+    <Image Include="Res\CARDTYPE.bmp" />
+    <Image Include="Res\CLEAN_JEFFON.png" />
+    <Image Include="Res\COIN_NUMBER.png" />
+    <Image Include="Res\CONTINUE_JEFFON.png" />
+    <Image Include="Res\CURSTORAGE.png" />
+    <Image Include="Res\GameClient.ico" />
+    <Image Include="Res\Game_end.png" />
+    <Image Include="Res\Game_frame\BT_CLOSE.bmp" />
+    <Image Include="Res\Game_frame\BT_CLOSE.png" />
+    <Image Include="Res\Game_frame\BT_MAX.bmp" />
+    <Image Include="Res\Game_frame\BT_MIN.bmp" />
+    <Image Include="Res\Game_frame\BT_MUSIC.bmp" />
+    <Image Include="Res\Game_frame\BT_RESORE.bmp" />
+    <Image Include="Res\Game_frame\BT_RULES.bmp" />
+    <Image Include="Res\Game_frame\BT_SET.bmp" />
+    <Image Include="Res\Game_frame\BT_SLIENT.bmp" />
+    <Image Include="Res\Game_frame\FRAME_BL.bmp" />
+    <Image Include="Res\Game_frame\FRAME_BM.bmp" />
+    <Image Include="Res\Game_frame\FRAME_BR.bmp" />
+    <Image Include="Res\Game_frame\FRAME_ML.bmp" />
+    <Image Include="Res\Game_frame\FRAME_MR.bmp" />
+    <Image Include="Res\Game_frame\FRAME_TL.bmp" />
+    <Image Include="Res\Game_frame\FRAME_TM.bmp" />
+    <Image Include="Res\Game_frame\FRAME_TR.bmp" />
+    <Image Include="Res\Game_frame\OPTION_LOGO.bmp" />
+    <Image Include="Res\GAME_LOGO.bmp" />
+    <Image Include="Res\GlodShaYu.png" />
+    <Image Include="Res\idb_niu_.png" />
+    <Image Include="Res\idb_sel_.png" />
+    <Image Include="Res\JETTON_NUM.png" />
+    <Image Include="Res\JETTON_NUM_B.png" />
+    <Image Include="Res\LUZI_ANIMAL.png" />
+    <Image Include="Res\LUZI_LEFT.png" />
+    <Image Include="Res\LUZI_MIDDLE.png" />
+    <Image Include="Res\LUZI_RIGHT.png" />
+    <Image Include="Res\ME_SCORE_NUMBER.bmp" />
+    <Image Include="Res\NUMBER_AND_SYMBOL.png" />
+    <Image Include="Res\PersonData_ADD.png" />
+    <Image Include="Res\PersonData_JIAN.png" />
+    <Image Include="Res\PNG_JETTON_AREA.png" />
+    <Image Include="Res\RESULT_ANIMAL.png" />
+    <Image Include="Res\RESULT_FRAME_OTHER.png" />
+    <Image Include="Res\RESULT_FRAME_SHAYU.png" />
+    <Image Include="Res\SCORE_NUMBER.bmp" />
+    <Image Include="Res\TEXTURE1.png" />
+    <Image Include="Res\TEXTURE2.png" />
+    <Image Include="Res\TEXTURE3.png" />
+    <Image Include="Res\TimeFlag.png" />
+    <Image Include="Res\TimerCount.png" />
+    <Image Include="Res\Time_back.png" />
+    <Image Include="Res\TIME_FLAG.png" />
+    <Image Include="Res\Time_number.png" />
+    <Image Include="Res\VIEW_BACK.png" />
+    <Image Include="Res\VIEW_FILL.bmp" />
+    <Image Include="Res\WinFrame1.png" />
+    <Image Include="Res\WinFrame2.png" />
+    <Image Include="Res\WinFrame3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GameClient.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\GameClient.rc2" />
+    <None Include="Res\SCORE_1.cur" />
+    <None Include="Res\SCORE_10.cur" />
+    <None Include="Res\SCORE_100.cur" />
+    <None Include="Res\SCORE_1000.cur" />
+    <None Include="Res\SCORE_10000.cur" />
+    <None Include="Res\SCORE_100000.cur" />
+    <None Include="Res\SCORE_1000000.cur" />
+    <None Include="Res\SCORE_10000000.cur" />
+    <None Include="Res\SCORE_500.cur" />
+    <None Include="Res\SCORE_50000.cur" />
+    <None Include="Res\SCORE_500000.cur" />
+    <None Include="Res\SCORE_5000000.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Res\GAME_END.wav" />
+    <Media Include="Res\GAME_START.wav" />
+    <Media Include="Res\PLACE_JETTON.wav" />
+    <Media Include="Res\SEND_CARD.wav" />
+    <Media Include="Res\Sound\ADD_GOLD.wav" />
+    <Media Include="Res\Sound\ADD_GOLD_EX.wav" />
+    <Media Include="Res\Sound\ANIMAL_SOUND_1.wav" />
+    <Media Include="Res\Sound\ANIMAL_SOUND_2.wav" />
+    <Media Include="Res\Sound\ANIMAL_SOUND_3.wav" />
+    <Media Include="Res\Sound\ANIMAL_SOUND_4.wav" />
+    <Media Include="Res\Sound\ANIMAL_SOUND_5.wav" />
+    <Media Include="Res\Sound\ANIMAL_SOUND_6.wav" />
+    <Media Include="Res\Sound\ANIMAL_SOUND_7.wav" />
+    <Media Include="Res\Sound\ANIMAL_SOUND_8.wav" />
+    <Media Include="Res\Sound\ANIMAL_SOUND_9.wav" />
+    <Media Include="Res\Sound\BACK_GROUND.wav" />
+    <Media Include="Res\Sound\CHEER1.wav" />
+    <Media Include="Res\Sound\CHEER2.wav" />
+    <Media Include="Res\Sound\CHEER3.wav" />
+    <Media Include="Res\Sound\DISPATCH_CARD.wav" />
+    <Media Include="Res\Sound\END_DRAW.wav" />
+    <Media Include="Res\Sound\END_LOST.wav" />
+    <Media Include="Res\Sound\END_WIN.wav" />
+    <Media Include="Res\Sound\GAME_FREE.wav" />
+    <Media Include="Res\Sound\GAME_START.wav" />
+    <Media Include="Res\Sound\idc_snd_.WAV" />
+    <Media Include="Res\Sound\TIME_WARIMG.wav" />
+    <Media Include="Res\Sound\买定离手.wav" />
+    <Media Include="Res\Sound\炸弹（通杀）.wav" />
+    <Media Include="Res\Sound\统赔.wav" />
+    <Media Include="Res\Sound\说话声.wav" />
+    <Media Include="Res\Sound\请下注.wav" />
+    <Media Include="Res\STOP_JETTON.wav" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="GameClient.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

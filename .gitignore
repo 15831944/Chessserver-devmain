@@ -1,0 +1,60 @@
+# folders
+Debug/
+Debug_Unicode/
+Release/
+Release_Unicode/
+ipch/
+链接库/
+deps/
+build/
+Ansi/
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+#*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+#*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+.DS_Store
+*.log
+.vs/
+*.ipch
+*.aps
+
+
+# VS extras
+*.sdf
+*.suo
+*.opensdf
+*.user
+*.db
+*.opendb
+*.filters
+*.pb
+

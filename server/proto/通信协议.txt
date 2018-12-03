@@ -1,0 +1,97 @@
+# 登陆服务其前端通信协议
+
+#define BYTE unsigned char;
+#define WORD unsigned short;
+#define DWORD unsigned long;
+#define TCHAR wchar_t;
+
+1. 游客登陆/获取分配账号
+消息ID: MDM_MB_LOGON(100) -> SUB_MB_LOGON_VISITOR(5)
+原二进制结构:
+struct CMD_MB_LogonVisitor {
+  WORD  wModuleID;      //模块标识
+  DWORD dwPlazaVersion; //广场版本
+  BYTE  cbDeviceType;   //设备类型
+  TCHAR szMachineID[LEN_MACHINE_ID];  //机器标识
+  TCHAR szLogonPass[LEN_MD5];         //登录密码
+};
+
+协议返回:
+SUB_MB_LOGON_SUCCESS(100)
+struct CMD_MB_LogonSuccess {
+  WORD  wFaceID;  //头像标识
+  DWORD dwUserID; //用户 I D
+  DWORD dwGameID; //游戏 I D
+  TCHAR szAccounts[LEN_ACCOUNTS];     //用户帐号
+  TCHAR szNickName[LEN_NICKNAME];     //用户昵称
+  TCHAR szDynamicPass[LEN_PASSWORD];  //动态密码
+  SCORE lUserScore;   //用户金币
+  SCORE lUserInsure;  //用户银行  
+  SCORE lPresent;     //赠送金币
+  //扩展信息
+  BYTE  cbInsureEnabled;  //使能标识
+  BYTE  cbIsAgent;        //代理标识
+  BYTE  cbMoorMachine;    //锁定机器
+  //约战房相关
+  DWORD dwLockServerID;   //锁定房间
+  DWORD dwKindID;         //游戏类型
+};
+SUB_MB_LOGON_FAILURE(101)
+
+游客登陆注册都是发这个协议:
+  注意登陆密码尽量填上，当机器未再服务器分配账号时，服务器会分配新账号
+  当机器已经分配了账号，服务器会根据登陆密码校验登陆，如过密码错误，提示密码过期
+  此时前端建议跳转到账号登陆界面，让用户输入账号密码进行登陆
+
+2. 游客账号绑定
+消息ID: MDM_MB_LOGON(100) -> SUB_MB_REGISTER_ACCOUNTS(3)
+proto结构:
+message ReqRegisterAccount {
+  int32 moduleID = 1;       //模块标识
+  int32 plazaVersion = 2;   //广场版本
+  int32 deviceType = 3;     //设备类型
+  uint32 userID = 4;
+  string logonPass = 5;     //登录密码
+  string account = 6;       //登录帐号
+  string nickName = 7;      //用户昵称
+  string spreaderCode = 8;
+  string verifyCode = 9;
+  string machineID = 10;    //机器标识
+}
+
+协议返回:
+SUB_MB_LOGON_SUCCESS(100)
+SUB_MB_LOGON_FAILURE(101)
+SUB_MB_LOGON_REPRET(199)
+
+3. 绑定账号验证码
+消息ID: MDM_MB_LOGON(100) -> SUB_MB_REGISTER_CODE(6)
+proto结构:
+message ReqRegisterCode {
+  string phone = 1;
+}
+协议返回:
+SUB_MB_LOGON_REPRET(199)
+
+4. 重置密码验证码
+消息ID: MDM_MB_LOGON(100) -> SUB_MB_RESETPASS_CODE(7)
+proto结构:
+message ReqRegisterCode {
+  string phone = 1;
+}
+协议返回:
+SUB_MB_LOGON_REPRET(199)
+
+5. 重置密码
+消息ID: MDM_MB_LOGON(100) -> SUB_MB_RESETPASSWD(8)
+proto结构:
+message ReqResetPasswd {
+  string phone = 1;
+  string code = 2;
+  string passwd = 3;
+}
+协议返回:
+SUB_MB_LOGON_REPRET(199)
+MDM_GP_USER_SERVICE(3)->
+  SUB_GP_OPERATE_SUCCESS(500) //操作成功
+  SUB_GP_OPERATE_FAILURE(501) //操作失败

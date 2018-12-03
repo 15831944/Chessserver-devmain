@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+package qpserver;
+
+service Logon {
+  rpc SendSms (ReqSendSms) returns (RepRet) {}
+  rpc VerifySms (ReqVerifySms) returns (RepRet) {}
+  rpc EraseSms (ReqSendSms) returns (RepRet) {}
+  rpc RegPreVerify (ReqRegVerifyItem) returns (RepRet) {}
+  rpc UpdateUser (ReqUpdUser) returns (RepRet) {}
+  rpc MapUser (ReqMapUser) returns (RepRet) {}
+}
+
+service Game {
+  rpc GamePlayStatis (ReqInOutGame) returns (RepRet) {}
+}
+
+//通用返回
+message RepRet {
+  int32 code = 1;
+  string error = 2;
+}
+
+//发送信息
+message ReqSendSms {
+  // 0-注册码
+  int32 kind = 1;
+  string phone = 2;
+}
+//核对验证码
+message ReqVerifySms {
+  int32 kind = 1;
+  string phone = 2;
+  string code = 3;
+  bool erase = 4; //通过则立即删除验证码
+}
+
+//核对注册验证码
+message ReqRegVerifyItem {
+  string phone = 1;
+  string code = 2;
+  string nickname = 3;
+}
+
+//添加/更新新用户
+message ReqUpdUser {
+  int32 user = 1;
+  int32 spreader = 2;
+  int32 rebate = 3;
+  string phone = 4;
+  string machine = 5;
+  string nickname = 6;
+}
+
+//映射用户
+message ReqMapUser {
+  int32 user = 1;
+  string phone = 2;
+  string third = 3;
+}
+
+//排行记录数据
+message ReqInOutGame {
+  int32 user = 1;
+  int32 game = 2;
+  int32 face = 3;
+  int32 playtime = 4;
+  int64 vscore = 5;
+  int64 tax = 6;
+  string nickname = 7;
+}

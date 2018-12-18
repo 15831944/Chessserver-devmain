@@ -1213,7 +1213,7 @@ bool CTableFrameSink::OnUserPlaceJetton(WORD wChairID, BYTE cbJettonArea, LONGLO
 		return false;
 	}
 
-	if (m_pITableFrame->GetGameStatus()!=GS_PLACE_JETTON)
+	if (m_pITableFrame->GetGameStatus()!=GS_PLACE_JETTON || m_wCurrentBanker == wChairID)
 	{
 		CMD_S_PlaceJettonFail PlaceJettonFail;
 		ZeroMemory(&PlaceJettonFail,sizeof(PlaceJettonFail));
@@ -1460,6 +1460,7 @@ BYTE CTableFrameSink::GetRandCardValue(bool bCheat)
 			}
 		}
 	}
+	return 0;
 }
 
 //申请庄家
@@ -1564,7 +1565,7 @@ bool CTableFrameSink::OnUserCancelBanker(IServerUserItem *pICancelServerUserItem
 		return true;
 	}
 
-	return false;
+	return true;
 }
 
 //更换庄家
@@ -2123,6 +2124,7 @@ bool CTableFrameSink::ProbeJudge(bool& bSystemLost)
 // 		}else
 		return false;
 	}
+	return true;
 }
 
 
